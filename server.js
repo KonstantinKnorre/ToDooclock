@@ -7,9 +7,11 @@ const methodOverride = require('method-override') // Für PUT- und DELETE-Reques
 const User = require('./models/user'); // Importiert das User-Modell
 const bcrypt = require('bcrypt'); // Importiert Verschlüsselungs-Package fürs speichern von Passwörtern
 const session = require('express-session'); // Importiert Session-Package
-
+require('dotenv').config();
+const dbUrl = process.env.DB_URL;
 // Verbidnung zur MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/calendo')
+//'mongodb://127.0.0.1:27017/calendo'
+mongoose.connect(dbUrl)
     .then(() => {
         console.log("Verbunden mit MongoDB!")
     })
