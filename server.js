@@ -10,7 +10,7 @@ const session = require('express-session'); // Importiert Session-Package
 require('dotenv').config();
 const sessionSecret = process.env.SESSION_SECRET;
 const dbUrl = process.env.DB_URL;
-let useLocalDB = true;
+let useLocalDB = false;
 // Verbidnung zur MongoDB
 //'mongodb://127.0.0.1:27017/calendo'
 if(!useLocalDB){
