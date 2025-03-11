@@ -11,6 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.classList.toggle("active");
         });
     }
+
+    //ARCHIVE
+    const archive = document.querySelector(".archive");
+    const archiveList = document.querySelector(".archive-list");
+    
+    archive.addEventListener("click", () => {
+        archiveList.style.display = archiveList.style.display === "none" ? "block" : "none";
+    });
     // const taskCategories = {
     //     "Wichtig / Dringend": document.getElementById("important-urgent").querySelector(".task-list"),
     //     "Wichtig / Nicht dringend": document.getElementById("important-not-urgent").querySelector(".task-list"),

@@ -8,10 +8,21 @@ const User = require('./models/user'); // Importiert das User-Modell
 const bcrypt = require('bcrypt'); // Importiert Verschlüsselungs-Package fürs speichern von Passwörtern
 const session = require('express-session'); // Importiert Session-Package
 require('dotenv').config();
+const sessionSecret = process.env.SESSION_SECRET;
 const dbUrl = process.env.DB_URL;
+let useLocalDB = true;
 // Verbidnung zur MongoDB
 //'mongodb://127.0.0.1:27017/calendo'
-mongoose.connect(dbUrl)
+if(!useLocalDB){
+    mongoose.connect(dbUrl)
+    .then(() => {
+        console.log("Verbunden mit MongoDB!")
+    })
+    .catch(err => {
+        console.error("Etwas lief schief mit der Datenbank:", err)
+    })  
+} else {
+    mongoose.connect('mongodb://127.0.0.1:27017/calendo')
     .then(() => {
         console.log("Verbunden mit MongoDB!")
     })
@@ -26,6 +37,8 @@ mongoose.connect(dbUrl)
                 console.error("Etwas lief schief mit der Datenbank:", err)
             })  
     })
+}
+
 
 
 // Middleware
@@ -33,7 +46,7 @@ app.use(express.json());  // Für JSON-Daten
 app.use(express.urlencoded({ extended: true }));  // Für Formulardaten
 app.use(express.static("public")); // Statische Dateien (css, js) im Ordner "public"
 app.use(methodOverride('_method')); // Für PUT- und DELETE-Requests
-app.use(session({secret: '+JbRDgtYv_DV}.LrR^@S)9AspBS][,'}));
+app.use(session({secret: sessionSecret}));
 
 app.set('view engine', 'ejs'); // EJS als View-Engine
 

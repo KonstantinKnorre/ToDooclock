@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo o’clocko</title>
+    <title>ToDo o’clock</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,6 +29,7 @@
             <li onclick="openTimerPopup()"><a href="#" id="pomodoro-link"><span
                         class="material-symbols-outlined">nutrition</span> Pomodoro Timer</a>
             </li>
+            <li><a href="#logout" id="logoutLink"><span class="material-icons">leaderboard</span> Leaderboard</a></li>
             <li><a href="#logout" id="logoutLink"><span class="material-icons">account_circle</span> Logout</a></li>
         </ul>
     </nav>
@@ -227,9 +228,9 @@
                 <% for (let todo of todos) { if (todo.isCompleted) { hasCompletedTasks=true; break; } } %>
                     <% if (hasCompletedTasks) { %>
                         <div class="archive">
-                            <div class="task-categories">
-                                <div class="task-category" id="important-urgent">
-                                    <h2>Archive (Completet ToDos)</h2>
+                            <!--<div class="task-categories">-->
+                                <!--<div class="task-category" id="important-urgent">-->
+                                    <h2 style="cursor: pointer">Archive (Completet ToDos)</h2>
                                     <div class="archive-list">
                                         <% for (let todo of todos) { if (todo.isCompleted) { %>
                                             <div class="task-item completed">
@@ -260,8 +261,8 @@
                                             </div>
                                             <% }} %>
                                     </div>
-                                </div>
-                            </div>
+                                <!--</div>-->
+                            <!--</div>-->
                         </div>
                         <% } %>
         </main>
