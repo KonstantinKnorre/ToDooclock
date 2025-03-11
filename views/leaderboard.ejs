@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo o’clock</title>
+    <link rel="stylesheet" href="/calendo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+<body>
+    <header style="justify-content: center">
+        <div class="container">
+            <div class="tasks" style="justify-content: center; text-align: center;">
+                <span class="material-icons" style="font-size: 50px;">leaderboard</span>
+                <h1 style="text-align: center; margin: 0px">Leaderboard</h1>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main">
+            <div class="tasks">
+                    <div class="task-list">
+                        <%let topUsers = 50;
+                            if(users[topUsers]!=null){ for(let i=0; i < topUsers; i++) { if(users[i].totalTimeWorked > users[topUsers].totalTimeWorked && users[i].totalTimeWorked > 0)  {%>
+                        <%//for (let user of users) { if(user.totalTimeWorked > users[50].totalTimeWorked) {%>
+                            <div class="task-item">
+                                <span class="todo-name">
+                                    #<%=i+1%> <%=users[i].username %>
+                                </span>
+
+
+                                <span class="task-duration">
+                                    <%= users[i].totalTimeWorked %> 
+                                </span>
+
+                            </div>
+                            <% }}} else {for (const [index, user] of users.entries()) { if(user.totalTimeWorked > 0){ %>
+                                <div class="task-item">
+                                    <span class="todo-name">
+                                        #<%= index+1; %> <%=user.username %>
+                                    </span>
+
+
+                                    <span class="task-duration">
+                                        <%= user.totalTimeWorked %> 
+                                    </span>
+                                </div>
+                           <% }}}%>
+                        
+
+                    </div>
+            </div>
+        </div>
+    </div>
+    <p style="text-align: center; font-size: 14px;">This are the top 50. Your Score is your total time worked in seconds.</p>
+    <div class="time-tracker" style="justify-content: center;">
+        <form action="/todos" method="GET">
+            <button>Back</button>
+        </form>
+    </div>
+</body>
+</html>

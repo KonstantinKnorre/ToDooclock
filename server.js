@@ -10,7 +10,7 @@ const session = require('express-session'); // Importiert Session-Package
 require('dotenv').config();
 const sessionSecret = process.env.SESSION_SECRET;
 const dbUrl = process.env.DB_URL;
-let useLocalDB = false;
+let useLocalDB = true;
 // Verbidnung zur MongoDB
 //'mongodb://127.0.0.1:27017/calendo'
 if(!useLocalDB){
@@ -114,6 +114,23 @@ app.get('/timeWorked/:workedTime', async (req, res) => {
     //res.status(200).json({ message: `Received worked time: ${workedTime}` });
     return res.redirect('/todos');
     })
+
+app.get("/leaderboard", async (req, res) => {
+    //if(!req.session.user_id){       //überprüft ob wir angemeldet sind
+  //      return res.redirect("/");
+//    }
+let users;
+    try{
+        users = await User.find({});
+        users.sort((a, b) => b.totalTimeWorked - a.totalTimeWorked);
+       // return res.send(users[50]);
+        //users[50] = users[2];
+
+    } catch {
+        res.send("error")
+    }
+    return res.render('leaderboard', {users});
+})
 // POST-Route
 
 //neuen User erstellen
