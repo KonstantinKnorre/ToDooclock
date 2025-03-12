@@ -108,7 +108,13 @@
 
 
                                     <span class="task-duration">
-                                        <%= todo.duration %> min
+                                        <%= todo.duration %>
+                                    </span>
+
+                                    <span>
+                                        <button style="margin-left: 0px; margin-right: 0px;" onclick="openEditPopup('<%= todo._id %>', '<%= todo.name %>', '<%= todo.duration %>', '<%= todo.isImportant %>', '<%= todo.isUrgent %>')" class="delete-btn">
+                                            <span class="material-icons trash-icon">edit</span>
+                                        </button>
                                     </span>
 
                                     <form action="/todos/<%= todo._id %>?_method=DELETE" method="POST"
@@ -141,8 +147,14 @@
                                     </span>
 
                                     <span class="task-duration">
-                                        <%= todo.duration %> min
+                                        <%= todo.duration %>
                                     </span>
+
+                                    <span>
+                                        <button style="margin-left: 0px; margin-right: 0px;" onclick="openEditPopup('<%= todo._id %>', '<%= todo.name %>', '<%= todo.duration %>', '<%= todo.isImportant %>', '<%= todo.isUrgent %>')" class="delete-btn">
+                                            <span class="material-icons trash-icon">edit</span>
+                                        </button>
+                                    </span>                                    
 
                                     <form action="/todos/<%= todo._id %>?_method=DELETE" method="POST"
                                         style="display:inline;">
@@ -174,7 +186,13 @@
                                     </span>
 
                                     <span class="task-duration">
-                                        <%= todo.duration %> min
+                                        <%= todo.duration %>
+                                    </span>
+
+                                    <span>
+                                        <button style="margin-left: 0px; margin-right: 0px;" onclick="openEditPopup('<%= todo._id %>', '<%= todo.name %>', '<%= todo.duration %>', '<%= todo.isImportant %>', '<%= todo.isUrgent %>')" class="delete-btn">
+                                            <span class="material-icons trash-icon">edit</span>
+                                        </button>
                                     </span>
 
                                     <form action="/todos/<%= todo._id %>?_method=DELETE" method="POST"
@@ -207,7 +225,13 @@
                                     </span>
 
                                     <span class="task-duration">
-                                        <%= todo.duration %> min
+                                        <%= todo.duration %>
+                                    </span>
+
+                                    <span>
+                                        <button style="margin-left: 0px; margin-right: 0px;" onclick="openEditPopup('<%= todo._id %>', '<%= todo.name %>', '<%= todo.duration %>', '<%= todo.isImportant %>', '<%= todo.isUrgent %>')" class="delete-btn">
+                                            <span class="material-icons trash-icon">edit</span>
+                                        </button>
                                     </span>
 
                                     <form action="/todos/<%= todo._id %>?_method=DELETE" method="POST"
@@ -248,7 +272,7 @@
                                                 </span>
 
                                                 <span class="task-duration">
-                                                    <%= todo.duration %> min
+                                                    <%= todo.duration %>
                                                 </span>
 
                                                 <form action="/todos/<%= todo._id %>?_method=DELETE" method="POST"
@@ -273,21 +297,21 @@
     <div id="task-popup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
-            <h3>Neue Aufgabe hinzufügen</h3>
+            <h3>Add New Task</h3>
             <form id="task-form" action="/todos" method="POST">
-                <label for="task-name">Name der Aufgabe:</label>
+                <label for="task-name">Name of ToDo:</label>
                 <input type="text" id="task-name" name="name" required>
 
-                <label for="task-duration">Dauer der Aufgabe:</label>
+                <label for="task-duration">Estimated Time Required:</label>
                 <input type="number" id="task-duration" name="duration" min="0" required>
 
-                <label for="task-important">Wichtig:</label>
+                <label for="task-important">Important:</label>
                 <input type="checkbox" id="task-important" name="isImportant">
 
-                <label for="task-urgent">Dringend:</label>
+                <label for="task-urgent">Urgent:</label>
                 <input type="checkbox" id="task-urgent" name="isUrgent">
 
-                <button type="submit">Hinzufügen</button>
+                <button type="submit">Add</button>
             </form>
         </div>
     </div>
@@ -296,24 +320,24 @@
     <div id="edit-task-popup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
-            <h3>Aufgabe bearbeiten</h3>
+            <h3>Edit ToDo</h3>
             <form id="edit-task-form" method="POST">
 
                 <input type="hidden" id="edit-task-id"> <!-- Hier wird die ID in einem versteckten Feld eingefügt-->
 
-                <label for="edit-task-name">Name der Aufgabe:</label>
+                <label for="edit-task-name">Name of ToDo:</label>
                 <input type="text" id="edit-task-name" name="name" required>
 
-                <label for="task-duration">Dauer der Aufgabe:</label>
+                <label for="task-duration">Estimated Time Required:</label>
                 <input type="number" id="edit-task-duration" name="duration" min="0" required>
 
-                <label for="edit-task-important">Wichtig:</label>
+                <label for="edit-task-important">Important:</label>
                 <input type="checkbox" id="edit-task-important" name="isImportant">
 
-                <label for="edit-task-urgent">Dringend:</label>
+                <label for="edit-task-urgent">Urgent:</label>
                 <input type="checkbox" id="edit-task-urgent" name="isUrgent">
 
-                <button type="submit">Speichern</button>
+                <button type="submit">Save</button>
             </form>
         </div>
     </div>

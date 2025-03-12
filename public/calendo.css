@@ -144,7 +144,7 @@ main {
     border-radius: 10px;
     font-weight: normal;
     border: 1px solid #F1F1F1;
-    gap: 10px;
+    /*gap: 10px;*/
 }
 
 .task-item.completed {
@@ -560,8 +560,9 @@ button:hover {
 
 .task-duration {
     background: #FFF8E8;
-    padding: 5px 10px;
+    padding: 3px 10px;
     border-radius: 5px;
+    margin-right: 3px;
     margin-left: auto;
     /* Schiebt die Dauer ganz nach rechts */
 
@@ -574,6 +575,9 @@ button:hover {
     color: red;
     /* Standardfarbe für das Icon */
     padding: 3px;
+    margin: 3px;
+    margin-left: 0px;
+    
     /* Weniger Abstand, damit es kompakter ist */
 }
 

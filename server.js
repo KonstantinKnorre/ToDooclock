@@ -93,6 +93,7 @@ app.get('/todos', async (req, res) => {
     }
 })
 
+//tracks totalTimeWorked
 app.get('/timeWorked/:workedTime', async (req, res) => {
     const { workedTime } = req.params;
     //console.log('Received workedTime:', workedTime);  // This will log "Received workedTime: 6"
@@ -115,10 +116,8 @@ app.get('/timeWorked/:workedTime', async (req, res) => {
     return res.redirect('/todos');
     })
 
+//Leaderboard
 app.get("/leaderboard", async (req, res) => {
-    //if(!req.session.user_id){       //überprüft ob wir angemeldet sind
-  //      return res.redirect("/");
-//    }
 let users;
     try{
         users = await User.find({});

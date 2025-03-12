@@ -143,9 +143,12 @@ increaseButton.addEventListener('click', () => {
 
 // Zieht 60 Sekunden vom Timer ab
 decreaseButton.addEventListener('click', () => {
-    timeRemaining -= 60;
-    currentBaseTime = timeRemaining; // Basiswert aktualisieren
-    updateTimeDisplay();
+    if(timeRemaining >= 60){
+        timeRemaining -= 60;
+        currentBaseTime = timeRemaining; // Basiswert aktualisieren
+        updateTimeDisplay();
+    }
+
 })
 
 // Funktion um "Stunden heute" zu aktualisieren
