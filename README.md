@@ -1,6 +1,7 @@
 # ToDo o'clock
 
 Website: https://todooclock.onrender.com
+
 Techstack: HTML, CSS, JS, NodeJS, ExpressJS, MongoDB
 
 It´s ToDo o'clock
@@ -72,10 +73,13 @@ Song, B., Jing, Q., & Wang, B. (2020). Procrastinate at Work, Sleep Badly at Nig
 Team & Position
 
 Dominik Chzhen 	frontend - development
+
 Felix Krenzel 		frontend - development
+
 Julia Khalil		frontend - development
 
 Christopher Resing 	backend - development
+
 Konstantin Knorre 	backend - development
 
 https://ms.techlabs.org/projects/it-s-todo-o-clock
