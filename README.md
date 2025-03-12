@@ -72,14 +72,14 @@ Song, B., Jing, Q., & Wang, B. (2020). Procrastinate at Work, Sleep Badly at Nig
 
 Team & Position
 
-Dominik Chzhen 	frontend - development
+Dominik Chzhen: 	frontend
 
-Felix Krenzel 		frontend - development
+Felix Krenzel: 		frontend
 
-Julia Khalil		frontend - development
+Julia Khalil:		frontend
 
-Christopher Resing 	backend - development
+Christopher Resing: 	backend
 
-Konstantin Knorre 	backend - development
+Konstantin Knorre: 	backend
 
 https://ms.techlabs.org/projects/it-s-todo-o-clock
